@@ -11,6 +11,8 @@ https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/lib/index.min.js
 <link href="
 https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
 " rel="stylesheet">
+
+
   </head>
   <body>
     <!-- navigation bar -->
@@ -34,7 +36,7 @@ https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
             >Contact</a
           >
         </li>
-        <li class="flex md:hidden">
+        <li class="flex md:hidden" id="menu" onclick="menuClick()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -52,6 +54,14 @@ https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
         </li>
       </ul>
     </nav>
+    <div class="w-full	h-full z-10 bg-green-100 ml-96 hidden flex-col fixed pl-4 font-bold duration-700 md:hidden" id="slideNavBar">
+      <p><button onclick="closeBtn()">X</button></p>
+      <a href="./index.html">Home</a>
+      <a href="./products.html">Products</a>
+    
+      <a href="./contact.html">Contact</a>
+    </div>
+
     <!-- section one -->
     <div class="bg-green-100 p-4 flex justify-around items-center">
       <div>
@@ -150,7 +160,7 @@ https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
       <h1>Best Seller</h1>
     </div>
     <!-- section five -->
-    <div class="grid grid-cols-2 mt-10 md:grid-cols-4 ">
+    <div class="grid grid-cols-2 mt-10 gap-2 md:grid-cols-4 ">
   
       <div class="text-center transform hover:-translate-y-2 hover:shadow-4xl  ">
         <img src="./img/img5.png" class="inline"/>
@@ -229,5 +239,20 @@ https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
       </p>
       <h1 class="mt-5">@ 2021 Greenday.com</h1>
     </div>
+
+
+
+
+    <script>
+      function menuClick(){
+        document.getElementById('slideNavBar').style.display="flex"
+        document.getElementById('slideNavBar').style.marginLeft = "60%"
+      
+      }
+
+      function closeBtn(){
+            document.getElementById('slideNavBar').style.marginLeft = "100%"
+        }
+    </script>
   </body>
 </html>

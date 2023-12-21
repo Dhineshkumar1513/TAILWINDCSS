@@ -33,7 +33,7 @@ https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
             >Contact</a
           >
         </li>
-        <li class="flex md:hidden">
+        <li class="flex md:hidden" onclick="menuClick()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -51,50 +51,57 @@ https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
         </li>
       </ul>
     </nav>
+    <div class="w-full	h-full z-10 bg-green-100 ml-96 fixed pl-4 hidden flex-col font-bold duration-700 md:hidden" id="slideNavBar">
+      <a><button onclick="closeBtn()">X</button></a>
+      <a href="./index.html">Home</a>
+      <a href="./products.html">Products</a>
+    
+      <a href="./contact.html">Contact</a>
+      </div>
     <div class="text-center">
         <h1 class="font-bold text-4xl mt-6 mb-4">Our Products</h1>
-        <input type=" text" placeholder="Search for a products..." class=" border border-black rounded p-2" style="width: 80%;"/>
+        <input type=" text" placeholder="Search for a products..." onkeyup="searchPlant()" class=" border border-black rounded p-2" style="width: 80%;" id="Input"/>
     </div>
      <!-- product -->
     <div class="grid grid-cols-2 m-10 gap-5 md:grid-cols-4  ">
-        <div class="text-center transform hover:-translate-y-2 hover:shadow-4xl  ">
+        <div id="p__Div" class="text-center transform hover:-translate-y-2 hover:shadow-4xl  ">
             <img src="./img/bestseller_1.jpg" alt="" class="inline">
-            <p class="">Rose plant</p>
+            <p class="p__name">Rose plant</p>
             <p>₹20</p>
         </div> 
-        <div class="text-center transform hover:-translate-y-2 hover:shadow-4xl  "  class="text-center transform hover:-translate-y-2 hover:shadow-4xl  ">
+        <div id="p__Div" class="text-center transform hover:-translate-y-2 hover:shadow-4xl "  >
             <img src="./img/bestseller_2.jpg" alt=""class="inline">
-            <p>Rose plant</p>
+            <p class="p__name">Jasmin plant</p>
             <p>₹20</p>
         </div>
-        <div class="text-center transform hover:-translate-y-2 hover:shadow-4xl  ">
+        <div id="p__Div" class="text-center transform hover:-translate-y-2 hover:shadow-4xl  ">
             <img src="./img/bestseller_3.png" alt=""class="inline">
-            <p>Rose plant</p>
+            <p class="p__name">Sunflower plant</p>
             <p>₹20</p>
         </div>
-        <div class="text-center transform hover:-translate-y-2 hover:shadow-4xl  ">
+        <div id="p__Div" class="text-center transform hover:-translate-y-2 hover:shadow-4xl  ">
             <img src="./img/bestseller_4.png" alt=""class="inline">
-            <p>Rose plant</p>
+            <p class="p__name">Lavender plant</p>
             <p>₹20</p>
         </div>
-        <div class="text-center transform hover:-translate-y-2 hover:shadow-4xl  ">
+        <div id="p__Div" class="text-center transform hover:-translate-y-2 hover:shadow-4xl  ">
             <img src="./img/bestseller_3.png" alt=""class="inline">
-            <p>Rose plant</p>
+            <p class="p__name">White Rose plant</p>
             <p>₹20</p>
         </div>
-        <div class="text-center transform hover:-translate-y-2 hover:shadow-4xl  ">
+        <div id="p__Div" class="text-center transform hover:-translate-y-2 hover:shadow-4xl  ">
             <img src="./img/bestseller_4.png" alt=""class="inline">
-            <p>Rose plant</p>
+            <p class="p__name">Lilyy plant</p>
             <p>₹20</p>
         </div>
-        <div class="text-center transform hover:-translate-y-2 hover:shadow-4xl  ">
+        <div id="p__Div" class="text-center transform hover:-translate-y-2 hover:shadow-4xl  ">
              <img src="./img/bestseller_1.jpg" alt=""class="inline">
-             <p>Rose plant</p>
+             <p class="p__name">Carnation plant</p>
             <p>₹20</p>
         </div>
-        <div class="text-center transform hover:-translate-y-2 hover:shadow-4xl  ">
+        <div id="p__Div" class="text-center transform hover:-translate-y-2 hover:shadow-4xl  ">
             <img src="./img/bestseller_2.jpg" alt=""class="inline">
-            <p>Rose plant</p>
+            <p class="p__name">Lotus plant</p>
             <p>₹20</p>
         </div>
     </div>
@@ -107,5 +114,36 @@ https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
         </p>
         <h1 class="mt-5">@ 2021 Greenday.com</h1>
       </div>
+
+      <script>
+        function menuClick(){
+          document.getElementById('slideNavBar').style.display="flex"
+          document.getElementById('slideNavBar').style.marginLeft = "60%"
+         
+        }
+  
+        function closeBtn(){
+              document.getElementById('slideNavBar').style.marginLeft = "100%"
+          }
+
+          function searchPlant(){
+              var inputName=document.getElementById('Input').value
+              var productName=document.querySelectorAll('#p__Div')
+              for (let i of productName){
+                var productValue=i.textContent.toLowerCase()
+                if(productValue.includes(inputName)){
+                  i.style.display="block"
+               
+                  
+                }
+                else{
+                  i.style.display='none'
+                }
+               }
+              
+            }
+      </script>
+
+
 </body>
 </html>

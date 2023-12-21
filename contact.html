@@ -40,10 +40,9 @@
           <a
             href="./contact.html"
             class="hidden text-gray-400 hover:underline hover:text-black md:flex"
-            >Contact</a
-          >
+            >Contact</a>
         </li>
-        <li class="flex md:hidden">
+        <li class="flex md:hidden" onclick="menuClick()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -61,6 +60,13 @@
         </li>
       </ul>
     </nav>
+    <div class="w-full	h-full z-10 bg-green-100 ml-96 fixed pl-4 hidden flex-col font-bold duration-700 md:hidden" id="slideNavBar">
+      <a><button onclick="closeBtn()">X</button></a>
+      <a href="./index.html">Home</a>
+      <a href="./products.html">Products</a>
+    
+      <a href="./contact.html">Contact</a>
+      </div>
     <!-- contact -->
     <div class="grid mb-24 justify-center">
       <h1 class="text-center text-4xl mt-10 mb-4">Contact Us</h1>
@@ -102,5 +108,19 @@
       </p>
       <h1 class="mt-5">@ 2021 Greenday.com</h1>
     </div>
+
+
+    <script>
+      function menuClick(){
+        document.getElementById('slideNavBar').style.display="flex"
+        document.getElementById('slideNavBar').style.marginLeft = "60%"
+      
+      }
+
+      function closeBtn(){
+            document.getElementById('slideNavBar').style.marginLeft = "100%"
+        }
+    </script>
+
   </body>
 </html>
